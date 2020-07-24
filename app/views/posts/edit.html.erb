@@ -1,0 +1,28 @@
+<h1>Edit Post</h1>
+
+<%= form_with model: @post, local: true do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.label :destination %><br>
+  <%= f.select :destination_id, @destinations.map{ |w| [w.name, w.id] }, { include_blank: true }, { required: true } %> <br><br>
+
+  <%= f.label :blogger %><br>
+  <%= f.select :blogger_id, @bloggers.map{ |w| [w.name, w.id] }, { include_blank: true }, { required: true } %> <br><br>
+
+  <%= f.label :title %><br>
+  <%= f.text_field :title %> <br>
+
+  <%= f.label :content %><br>
+  <%= f.text_area :content %> <br>
+
+  <%= f.submit %>
+<% end %>

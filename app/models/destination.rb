@@ -1,4 +1,4 @@
 class Destination < ApplicationRecord
-  has_many :blogs
-  has_many :posts, through: :blogs
+  has_many :posts
+  has_many :bloggers, through: :posts
 end

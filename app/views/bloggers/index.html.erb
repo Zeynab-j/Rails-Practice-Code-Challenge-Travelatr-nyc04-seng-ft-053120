@@ -1,0 +1,13 @@
+<h1>Bloggers</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Bio Link</th>
+  </tr>
+  <% @bloggers.each do |blogger| %>
+  <tr>
+      <td><%= blogger.name %></td>
+      <td><%= link_to "See profile", blogger %> </td>
+  </tr>
+  <% end %>
+</table>

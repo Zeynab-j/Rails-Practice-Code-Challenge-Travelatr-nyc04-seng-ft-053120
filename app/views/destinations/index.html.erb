@@ -1,0 +1,15 @@
+<h1>Destinations</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Country</th>
+    <th>Link</th>
+  </tr>
+  <% @destinations.each do |destination| %>
+  <tr>
+      <td><%= destination.name %></td>
+      <td><%= destination.country%>
+      <td><%= link_to "See profile", destination %> </td>
+  </tr>
+  <% end %>
+</table>
